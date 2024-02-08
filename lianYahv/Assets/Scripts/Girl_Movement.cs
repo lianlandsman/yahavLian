@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class Girl_Movement : MonoBehaviour, Controls.IGirl_ControlsActions
 {
+    float direction = 0;
+    public float speed = 10;
     Controls controls;
     // Start is called before the first frame update
     private void Awake()
@@ -27,17 +29,17 @@ public class Girl_Movement : MonoBehaviour, Controls.IGirl_ControlsActions
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(speed * Time.deltaTime * direction, 0, 0);
     }
     void Controls.IGirl_ControlsActions.OnHorizontal(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-
+            direction = context.ReadValue<float>();
         }
         else
         {
-
+            direction = 0;
         }
     }
 
