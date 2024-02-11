@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Girl_Movement : MonoBehaviour, Controls.IGirl_ControlsActions
+public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
 {
     float direction = 0;
     public float speed = 10;
@@ -31,7 +31,7 @@ public class Girl_Movement : MonoBehaviour, Controls.IGirl_ControlsActions
     {
         transform.Translate(speed * Time.deltaTime * direction, 0, 0);
     }
-    void Controls.IGirl_ControlsActions.OnHorizontal(InputAction.CallbackContext context)
+    void Controls.IGirl_ControlsActions.OnHorizontal(InputAction.CallbackContext context)//movement
     {
         if (context.performed)
         {
@@ -45,6 +45,9 @@ public class Girl_Movement : MonoBehaviour, Controls.IGirl_ControlsActions
 
     void Controls.IGirl_ControlsActions.OnJump(InputAction.CallbackContext context)
     {
-        return;
+        if (context.performed)
+        {
+            return;
+        }
     }
 }
