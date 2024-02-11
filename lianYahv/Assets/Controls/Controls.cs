@@ -98,9 +98,18 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ""id"": ""23b4ee43-446c-4b1c-8f47-ea76dd95aa76"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""cf1391b8-2bf0-4fe5-a3ec-ac8716d2ce3b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5ca8bc9-ba7c-475e-b7da-0e43e7f138b7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -111,13 +120,46 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f247491a-63df-49d1-8662-c75acf2b3978"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1058f953-4b70-4d3b-bef4-1c8e5422595a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""f5dbadb1-afde-4045-980e-91e23f643ed8"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""58fb5752-72e3-4d2c-8c7c-f72c6c5aa6f8"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -130,7 +172,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Girl_Controls_Jump = m_Girl_Controls.FindAction("Jump", throwIfNotFound: true);
         // Cat_Controls
         m_Cat_Controls = asset.FindActionMap("Cat_Controls", throwIfNotFound: true);
-        m_Cat_Controls_Newaction = m_Cat_Controls.FindAction("New action", throwIfNotFound: true);
+        m_Cat_Controls_Jump = m_Cat_Controls.FindAction("Jump", throwIfNotFound: true);
+        m_Cat_Controls_Move = m_Cat_Controls.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -231,12 +274,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     // Cat_Controls
     private readonly InputActionMap m_Cat_Controls;
     private ICat_ControlsActions m_Cat_ControlsActionsCallbackInterface;
-    private readonly InputAction m_Cat_Controls_Newaction;
+    private readonly InputAction m_Cat_Controls_Jump;
+    private readonly InputAction m_Cat_Controls_Move;
     public struct Cat_ControlsActions
     {
         private @Controls m_Wrapper;
         public Cat_ControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Cat_Controls_Newaction;
+        public InputAction @Jump => m_Wrapper.m_Cat_Controls_Jump;
+        public InputAction @Move => m_Wrapper.m_Cat_Controls_Move;
         public InputActionMap Get() { return m_Wrapper.m_Cat_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -246,16 +291,22 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_Cat_ControlsActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnNewaction;
+                @Jump.started -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnJump;
+                @Move.started -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnMove;
             }
             m_Wrapper.m_Cat_ControlsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
             }
         }
     }
@@ -267,6 +318,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     }
     public interface ICat_ControlsActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }
