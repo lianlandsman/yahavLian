@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
 {
     Controls controls;
+    float direction = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +26,21 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         }
 
     }
+    public float speed = 10;
+
     // Update is called once per frame
     void Update()
     {
-            transform.Translate(0, 0, 0);     
+            transform.Translate(speed*Time.deltaTime*direction, 0, 0);     
     }
 
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        if(context.performed)
+        {
+            direction=context.ReadValue<float>();
+        }
     }
 }
 
