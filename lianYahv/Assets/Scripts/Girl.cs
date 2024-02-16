@@ -42,12 +42,4 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
             direction = 0;
         }
     }
-
-    void Controls.IGirl_ControlsActions.OnJump(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            return;
-        }
-    }
 }

@@ -13,15 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "9e74e0df-55dc-45b1-9338-9ac65b2bb0d8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -39,7 +30,7 @@
                 {
                     "name": "negative",
                     "id": "d6da105d-2b0e-421e-b639-ba18b757e56c",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -50,24 +41,13 @@
                 {
                     "name": "positive",
                     "id": "54ad8ca2-da9b-4b7c-95f4-818d29e7cc52",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Horizontal",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "521f4b74-04ac-4691-b3dc-4dbcfd2bff37",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -76,15 +56,6 @@
             "id": "23b4ee43-446c-4b1c-8f47-ea76dd95aa76",
             "actions": [
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "cf1391b8-2bf0-4fe5-a3ec-ac8716d2ce3b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Button",
                     "id": "f5ca8bc9-ba7c-475e-b7da-0e43e7f138b7",
@@ -92,20 +63,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "8b4c6c11-229e-497a-b745-2177bcff5a90",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "f247491a-63df-49d1-8662-c75acf2b3978",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "1D Axis",
                     "id": "1058f953-4b70-4d3b-bef4-1c8e5422595a",
@@ -138,6 +107,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "1e5e4c0f-2ac6-4329-b2c2-13f5c319557a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -13,6 +13,8 @@ public class Snake : MonoBehaviour
     void Start()
     {
         snakeTs = gameObject.transform;
+        GameObject girl = GameObject.FindGameObjectWithTag("Girl");
+        Physics2D.IgnoreCollision(girl.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class Snake : MonoBehaviour
         if (other.tag == "Cat")
         {
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(jumpScareSpeed,jumpScareHeight);
+            FindObjectOfType<Cat>().DisableCatControls();
         }
 
 
