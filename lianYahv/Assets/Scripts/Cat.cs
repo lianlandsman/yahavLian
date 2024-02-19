@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     public float speed = 10;
     public float JumpCat = 4;
     bool onGround = true;
+    float lookDir = 1;
+    bool isWalking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,8 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     // Update is called once per frame
     void Update()
     {
-            transform.Translate(speed*Time.deltaTime*direction, 0, 0);     
+        transform.Translate(speed * Time.deltaTime * direction, 0, 0);
+        GetComponent<Transform>().localScale = new Vector3(lookDir,1,1);
     }
 
 
@@ -40,10 +44,13 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         if(context.performed)
         {
             direction = context.ReadValue<float>();
+            lookDir = context.ReadValue<float>();
+            isWalking = true;
         }
         else
         {
             direction = 0;
+            isWalking = false;
         }
     }
     
@@ -56,7 +63,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.tag == "Ground")
+        if (other.collider.tag == "Ground")//land
         {
             onGround = true;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -65,7 +72,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     }
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.collider.tag == "Ground")
+        if (other.collider.tag == "Ground")//air
         {
             onGround = false;
         }
