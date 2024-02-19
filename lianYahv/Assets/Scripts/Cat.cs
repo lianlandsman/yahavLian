@@ -13,6 +13,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     bool onGround = true;
     float lookDir = 1;
     bool isWalking = false;
+    public float currentSpeed = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +35,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime * direction, 0, 0);
+        transform.Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
         GetComponent<Transform>().localScale = new Vector3(lookDir,1,1);
     }
 
@@ -43,12 +44,14 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     {
         if(context.performed)
         {
+            currentSpeed = speed;
             direction = context.ReadValue<float>();
-            lookDir = context.ReadValue<float>();
+            lookDir = context.ReadValue<float>();     
             isWalking = true;
         }
         else
         {
+            currentSpeed = 0;
             direction = 0;
             isWalking = false;
         }
@@ -67,7 +70,10 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         {
             onGround = true;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            controls.Cat_Controls.Enable();
+            if (isWalking)
+            {
+                currentSpeed = speed;
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D other)
@@ -76,10 +82,6 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         {
             onGround = false;
         }
-    }
-    public void DisableCatControls()
-    {
-        controls.Cat_Controls.Disable();
     }
 }
 
