@@ -36,7 +36,7 @@ public class Snake : MonoBehaviour
         if (other.tag == "Cat")
         {
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(jumpScareSpeed,jumpScareHeight);
-            FindObjectOfType<Cat>().currentSpeed = 0;
+            FindObjectOfType<Cat>().stun = true;
         }
 
 

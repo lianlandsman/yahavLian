@@ -12,8 +12,8 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     public float JumpCat = 4;
     bool onGround = true;
     float lookDir = 1;
-    bool isWalking = false;
-    public float currentSpeed = 0;
+    public bool stun = false;//from snake hit
+    bool isWalking = false;//for anim
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +35,10 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
+        if (stun == false)
+        {
+            transform.Translate(speed * Time.deltaTime * direction, 0, 0);
+        }
         GetComponent<Transform>().localScale = new Vector3(lookDir,1,1);
     }
 
@@ -44,14 +47,12 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     {
         if(context.performed)
         {
-            currentSpeed = speed;
             direction = context.ReadValue<float>();
             lookDir = context.ReadValue<float>();     
             isWalking = true;
         }
         else
         {
-            currentSpeed = 0;
             direction = 0;
             isWalking = false;
         }
@@ -69,11 +70,8 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         if (other.collider.tag == "Ground")//land
         {
             onGround = true;
+            stun = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            if (isWalking)
-            {
-                currentSpeed = speed;
-            }
         }
     }
     private void OnCollisionExit2D(Collision2D other)
