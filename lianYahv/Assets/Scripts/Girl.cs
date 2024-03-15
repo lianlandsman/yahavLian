@@ -7,12 +7,15 @@ using UnityEngine.InputSystem;
 
 public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
 {
+    Animator animator;
     float direction = 0;
+    float lookDir = 1;
     public float speed = 10;
     Controls controls;
     // Start is called before the first frame update
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         controls = new Controls();
         controls.Girl_Controls.SetCallbacks(this);
     }
@@ -30,16 +33,20 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
     void Update()
     {
         transform.Translate(speed * Time.deltaTime * direction, 0, 0);
+        GetComponent<Transform>().localScale = new Vector3(lookDir, 1, 1);
     }
     void Controls.IGirl_ControlsActions.OnHorizontal(InputAction.CallbackContext context)//movement
     {
         if (context.performed)
         {
             direction = context.ReadValue<float>();
+            lookDir = context.ReadValue<float>();
+            animator.SetBool("isWalking", true);
         }
         else
         {
             direction = 0;
+            animator.SetBool("isWalking", false);
         }
     }
 }

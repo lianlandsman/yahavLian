@@ -13,7 +13,6 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     bool onGround = true;
     float lookDir = 1;
     public bool stun = false;//from snake hit
-    bool isWalking = false;//for anim
     // Start is called before the first frame update
     void Start()
     {
@@ -49,12 +48,10 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         {
             direction = context.ReadValue<float>();
             lookDir = context.ReadValue<float>();     
-            isWalking = true;
         }
         else
         {
             direction = 0;
-            isWalking = false;
         }
     }
     
