@@ -37,6 +37,7 @@ public class Snake : MonoBehaviour
         {
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(jumpScareSpeed,jumpScareHeight);
             FindObjectOfType<Cat>().stun = true;
+            other.GetComponent<Animator>().Play("catScared");
         }
 
 

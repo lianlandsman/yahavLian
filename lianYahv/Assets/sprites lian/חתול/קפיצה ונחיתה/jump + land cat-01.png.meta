@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 560
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,7 +127,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: jump + land cat-01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2181.3335
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f320328f222099a4687a76d76278eceb
+      internalID: 225951801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump + land cat-01_1
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 2181.3335
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89a31564a3e87046bbf30caa82363b7
+      internalID: 1303024294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump + land cat-01_2
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 2181.3335
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43cbbc2e42d4bd4da785d4f5267b3d1
+      internalID: -1229138351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump + land cat-01_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1091.3334
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6bcb252ffc77a49a48c9b0eb30f8f0
+      internalID: 1642677935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump + land cat-01_4
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1091.3334
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b861f25fc888e7242a8754744647a47f
+      internalID: 1976212645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump + land cat-01_5
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 1091.3334
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57b12276f4f11a4192827593c6705ff
+      internalID: -1445831625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump + land cat-01_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.333374
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8da02292f8ee3a459a9f29dff99039c
+      internalID: -1661184733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump + land cat-01_7
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1.333374
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99dd54b3903188442a3d76e8110c264f
+      internalID: -1131383689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump + land cat-01_8
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 1.333374
+        width: 1086.6666
+        height: 1090.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c1b92fa5cabc84b8160bb4a04a01ff
+      internalID: 529071729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +327,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jump + land cat-01_7: -1131383689
+      jump + land cat-01_3: 1642677935
+      jump + land cat-01_5: -1445831625
+      jump + land cat-01_2: -1229138351
+      jump + land cat-01_6: -1661184733
+      jump + land cat-01_1: 1303024294
+      jump + land cat-01_0: 225951801
+      jump + land cat-01_8: 529071729
+      jump + land cat-01_4: 1976212645
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

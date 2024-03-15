@@ -13,6 +13,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     bool onGround = true;
     float lookDir = 1;
     public bool stun = false;//from snake hit
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     }
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         controls = new Controls();
         controls.Cat_Controls.SetCallbacks(this);
     }
@@ -47,10 +49,12 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         if(context.performed)
         {
             direction = context.ReadValue<float>();
-            lookDir = context.ReadValue<float>();     
+            lookDir = context.ReadValue<float>();
+            animator.SetBool("isWalking", true);
         }
         else
         {
+            animator.SetBool("isWalking", false);
             direction = 0;
         }
     }
