@@ -10,7 +10,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     float direction = 0;
     public float speed = 10;
     public float JumpCat = 4;
-    bool onGround = true;
+    public bool onGround = true;
     float lookDir = 1;
     public bool stun = false;//from snake hit
     Animator animator;
@@ -41,6 +41,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
             transform.Translate(speed * Time.deltaTime * direction, 0, 0);
         }
         GetComponent<Transform>().localScale = new Vector3(lookDir,1,1);
+        animator.SetBool("onGround", onGround);
     }
 
 
@@ -64,6 +65,8 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         if (context.performed && onGround)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0,JumpCat);
+            animator.Play("Jump");
+            onGround = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -72,6 +75,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         {
             onGround = true;
             stun = false;
+            animator.SetBool("scared", false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
@@ -79,7 +83,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     {
         if (other.collider.tag == "Ground")//air
         {
-            onGround = false;
+            onGround = true;
         }
     }
 }
