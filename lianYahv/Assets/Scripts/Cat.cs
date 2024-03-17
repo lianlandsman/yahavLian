@@ -78,12 +78,23 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
             animator.SetBool("scared", false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
+        if(other.collider.tag == "Head")
+        {
+            animator.Play("headLand");
+            animator.SetBool("sitting", true);
+            onGround = true;
+        }
     }
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.collider.tag == "Ground")//air
         {
-            onGround = true;
+            onGround = false;
+        }
+        if (other.collider.tag == "Head")
+        {
+            animator.SetBool("sitting", false);
+            onGround= false;
         }
     }
 }
