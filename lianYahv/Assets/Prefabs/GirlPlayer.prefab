@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2119322576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119322577}
+  - component: {fileID: 2119322578}
+  m_Layer: 0
+  m_Name: kickCol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2119322577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119322576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05, y: -1.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1250408557265214078}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2119322578
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119322576}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.21001172
 --- !u!1 &1250408557089809066
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +60,7 @@ GameObject:
   - component: {fileID: 1250408557089809064}
   m_Layer: 0
   m_Name: head
-  m_TagString: Ground
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,13 +105,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.16784286, y: 0.41748428}
-      - {x: 0.004480362, y: 0.43728805}
-      - {x: -0.20069796, y: 0.39787605}
-      - {x: -0.33404732, y: 0.3016436}
-      - {x: -0.40019554, y: 0.19804394}
-      - {x: 0.41994154, y: 0.20791721}
-      - {x: 0.33892155, y: 0.3188905}
+    - - {x: 0.4789276, y: 0.02108097}
+      - {x: 0.45721436, y: 0.05346346}
+      - {x: 0.33393097, y: 0.10049963}
+      - {x: 0.21884727, y: 0.09830117}
+      - {x: 0.10213941, y: 0.057456285}
+      - {x: -0.044893265, y: 0.007415533}
+      - {x: -0.11296028, y: -0.08705318}
+      - {x: 0.5551872, y: -0.099066734}
+      - {x: 0.5464369, y: -0.08517504}
+      - {x: 0.53182316, y: -0.06535965}
 --- !u!1 &1250408557265214074
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,8 +127,8 @@ GameObject:
   - component: {fileID: 1250408557265214075}
   - component: {fileID: 1250408557265214079}
   - component: {fileID: 1250408557265214076}
-  - component: {fileID: 1250408557265214077}
   - component: {fileID: 1250408557265214050}
+  - component: {fileID: 343765950}
   m_Layer: 0
   m_Name: GirlPlayer
   m_TagString: Girl
@@ -95,10 +146,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -34.75, y: 3.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1250408557089809067}
   - {fileID: 1250408557316249351}
+  - {fileID: 2119322577}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -156,32 +208,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &1250408557265214077
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250408557265214074}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.08342859, y: -0.7545334}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.0869565, y: 4.2391305}
-    newSize: {x: 2.0869565, y: 4.2391305}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.63762486, y: 2.1866891}
-  m_EdgeRadius: 0
 --- !u!212 &1250408557265214050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -228,12 +254,57 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.0869565, y: 4.2391305}
+  m_Size: {x: 2.9525, y: 4.43}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &343765950
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250408557265214074}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.2678566, y: 0.32037067}
+      - {x: 0.47690964, y: 0.5223365}
+      - {x: 0.40076447, y: 0.85329914}
+      - {x: 0.44273376, y: 1.0411389}
+      - {x: 0.42668152, y: 1.2325721}
+      - {x: -0.2382698, y: 1.2360647}
+      - {x: -0.25836563, y: 1.191606}
+      - {x: -0.27336884, y: 1.1835761}
+      - {x: -0.32377625, y: 0.9019568}
+      - {x: -0.37953568, y: 0.6817002}
+      - {x: -0.3137465, y: -0.33073327}
+      - {x: -0.29216385, y: -0.98746955}
+      - {x: -0.3429985, y: -1.1759291}
+      - {x: -0.35449737, y: -1.4619467}
+      - {x: 0.16976166, y: -1.4665334}
+      - {x: 0.20667803, y: -1.348904}
+      - {x: 0.08909607, y: -1.3178924}
+      - {x: 0.1638794, y: -0.57484984}
+      - {x: 0.2088356, y: -0.3462739}
+      - {x: 0.18044949, y: 0.09584612}
 --- !u!1 &1250408557316249350
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +331,7 @@ Transform:
   m_GameObject: {fileID: 1250408557316249350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1250408557265214078}

@@ -35,6 +35,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""kick"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b4af0a7-4908-42c6-968a-620f3092999b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -70,6 +79,17 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""208eabf7-2fd6-4de2-9038-e74ec2d27be0"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""kick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -149,6 +169,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         // Girl_Controls
         m_Girl_Controls = asset.FindActionMap("Girl_Controls", throwIfNotFound: true);
         m_Girl_Controls_Horizontal = m_Girl_Controls.FindAction("Horizontal", throwIfNotFound: true);
+        m_Girl_Controls_kick = m_Girl_Controls.FindAction("kick", throwIfNotFound: true);
         // Cat_Controls
         m_Cat_Controls = asset.FindActionMap("Cat_Controls", throwIfNotFound: true);
         m_Cat_Controls_Move = m_Cat_Controls.FindAction("Move", throwIfNotFound: true);
@@ -213,11 +234,13 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Girl_Controls;
     private IGirl_ControlsActions m_Girl_ControlsActionsCallbackInterface;
     private readonly InputAction m_Girl_Controls_Horizontal;
+    private readonly InputAction m_Girl_Controls_kick;
     public struct Girl_ControlsActions
     {
         private @Controls m_Wrapper;
         public Girl_ControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Horizontal => m_Wrapper.m_Girl_Controls_Horizontal;
+        public InputAction @kick => m_Wrapper.m_Girl_Controls_kick;
         public InputActionMap Get() { return m_Wrapper.m_Girl_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -230,6 +253,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Horizontal.started -= m_Wrapper.m_Girl_ControlsActionsCallbackInterface.OnHorizontal;
                 @Horizontal.performed -= m_Wrapper.m_Girl_ControlsActionsCallbackInterface.OnHorizontal;
                 @Horizontal.canceled -= m_Wrapper.m_Girl_ControlsActionsCallbackInterface.OnHorizontal;
+                @kick.started -= m_Wrapper.m_Girl_ControlsActionsCallbackInterface.OnKick;
+                @kick.performed -= m_Wrapper.m_Girl_ControlsActionsCallbackInterface.OnKick;
+                @kick.canceled -= m_Wrapper.m_Girl_ControlsActionsCallbackInterface.OnKick;
             }
             m_Wrapper.m_Girl_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -237,6 +263,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Horizontal.started += instance.OnHorizontal;
                 @Horizontal.performed += instance.OnHorizontal;
                 @Horizontal.canceled += instance.OnHorizontal;
+                @kick.started += instance.OnKick;
+                @kick.performed += instance.OnKick;
+                @kick.canceled += instance.OnKick;
             }
         }
     }
@@ -285,6 +314,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     public interface IGirl_ControlsActions
     {
         void OnHorizontal(InputAction.CallbackContext context);
+        void OnKick(InputAction.CallbackContext context);
     }
     public interface ICat_ControlsActions
     {

@@ -9,6 +9,7 @@ TagManager:
   - SnakeReverse
   - Ground
   - Head
+  - Snake
   layers:
   - Default
   - TransparentFX
