@@ -21,7 +21,15 @@ public class kick : MonoBehaviour
     {
         if (other.tag == "Snake")
         {
+            
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(kickSpeed * FindObjectOfType<Girl>().lookDir, kickHeight);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Snake")
+        {
+            Debug.Log("d");
         }
     }
 }
