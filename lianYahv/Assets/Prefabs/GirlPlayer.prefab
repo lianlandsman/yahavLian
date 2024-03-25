@@ -129,7 +129,6 @@ GameObject:
   - component: {fileID: 1250408557265214076}
   - component: {fileID: 1250408557265214050}
   - component: {fileID: 343765950}
-  - component: {fileID: 343765955}
   m_Layer: 0
   m_Name: GirlPlayer
   m_TagString: Girl
@@ -188,7 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3914094e76fb08a479cdca56d733881f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookDir: 1
   speed: 10
 --- !u!95 &1250408557265214076
 Animator:
@@ -307,18 +305,6 @@ PolygonCollider2D:
       - {x: 0.1638794, y: -0.57484984}
       - {x: 0.2088356, y: -0.3462739}
       - {x: 0.18044949, y: 0.09584612}
---- !u!114 &343765955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250408557265214074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a93fea68eb43ffb40a719dea95de9708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1250408557316249350
 GameObject:
   m_ObjectHideFlags: 0
