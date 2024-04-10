@@ -10,6 +10,8 @@ TagManager:
   - Ground
   - Head
   - Snake
+  - Kick
+  - CatHit
   layers:
   - Default
   - TransparentFX

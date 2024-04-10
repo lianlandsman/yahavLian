@@ -114,6 +114,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hit"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8dc7756-50cb-4a6f-ab29-9d6c96253abe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -160,6 +169,17 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1698f942-c736-41db-a80e-aff50f3b69f1"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -174,6 +194,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Cat_Controls = asset.FindActionMap("Cat_Controls", throwIfNotFound: true);
         m_Cat_Controls_Move = m_Cat_Controls.FindAction("Move", throwIfNotFound: true);
         m_Cat_Controls_Jump = m_Cat_Controls.FindAction("Jump", throwIfNotFound: true);
+        m_Cat_Controls_Hit = m_Cat_Controls.FindAction("Hit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -276,12 +297,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private ICat_ControlsActions m_Cat_ControlsActionsCallbackInterface;
     private readonly InputAction m_Cat_Controls_Move;
     private readonly InputAction m_Cat_Controls_Jump;
+    private readonly InputAction m_Cat_Controls_Hit;
     public struct Cat_ControlsActions
     {
         private @Controls m_Wrapper;
         public Cat_ControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Cat_Controls_Move;
         public InputAction @Jump => m_Wrapper.m_Cat_Controls_Jump;
+        public InputAction @Hit => m_Wrapper.m_Cat_Controls_Hit;
         public InputActionMap Get() { return m_Wrapper.m_Cat_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -297,6 +320,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnJump;
+                @Hit.started -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnHit;
+                @Hit.performed -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnHit;
+                @Hit.canceled -= m_Wrapper.m_Cat_ControlsActionsCallbackInterface.OnHit;
             }
             m_Wrapper.m_Cat_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -307,6 +333,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Hit.started += instance.OnHit;
+                @Hit.performed += instance.OnHit;
+                @Hit.canceled += instance.OnHit;
             }
         }
     }
@@ -320,5 +349,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnHit(InputAction.CallbackContext context);
     }
 }

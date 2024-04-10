@@ -17,6 +17,7 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
     float lastKick = 0;
     float kickTime = 21f/24f;
     float currentSpeed;
+    float lastLookDir;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -41,14 +42,29 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
     {
         transform.Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
         GetComponent<Transform>().localScale = new Vector3(lookDir, 1, 1);
+        if (FindObjectOfType<Cat>().onGround && FindObjectOfType<Cat>().animator.GetBool("sitting"))
+        {
+            FindObjectOfType<Cat>().GetComponent<Transform>().Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
+        }
     }
     void Controls.IGirl_ControlsActions.OnHorizontal(InputAction.CallbackContext context)//movement
     {
         if (context.performed)
         {
+            lastLookDir = lookDir;
             direction = context.ReadValue<float>();
             lookDir = context.ReadValue<float>();
             animator.SetBool("isWalking", true);
+            if (FindObjectOfType<Cat>().onGround && FindObjectOfType<Cat>().animator.GetBool("sitting") && lastLookDir != lookDir)
+            {
+                FindObjectOfType<Cat>().lookDir *= -1;
+                if (FindObjectOfType<Cat>().lookDir != lookDir)
+                {
+                    FindObjectOfType<Cat>().GetComponent<Transform>().position = new Vector2((float)(FindObjectOfType<Cat>().GetComponent<Transform>().position.x + 0.5 * lookDir), FindObjectOfType<Cat>().GetComponent<Transform>().position.y);
+                }
+
+                
+            }
         }
         else
         {
@@ -66,8 +82,6 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
                 currentSpeed = 0;
                 Invoke("fixSpeed",kickTime);
                 lastKick = Time.timeSinceLevelLoad;
-
-
             }
         }
 

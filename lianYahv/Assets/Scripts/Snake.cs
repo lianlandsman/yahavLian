@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Snake : MonoBehaviour
 {
-    public float snakeSpeed = 2.5f;
+    public float snakeSpeed = 3.5f;
     public float jumpScareSpeed = 7;
     public float jumpScareHeight = 5.5f;
+    public float kickX = 6;
+    public float kickY = 4;
+    public bool canMove = true;
+    public float snakeStun = 2f;
     Transform snakeTs;
 
     // Start is called before the first frame update
@@ -20,7 +24,10 @@ public class Snake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(snakeSpeed * Time.deltaTime,0,0);
+        if (canMove)
+        {
+            transform.Translate(snakeSpeed * Time.deltaTime, 0, 0);
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -42,11 +49,24 @@ public class Snake : MonoBehaviour
             other.GetComponent<Animator>().SetBool("scared", true);
         }
 
-
         if (other.tag == "SnakeReverse")
         {
             snakeSpeed = -snakeSpeed;
             GetComponent<Transform>().localScale = new Vector3(-snakeTs.localScale.x, snakeTs.localScale.y, snakeTs.localScale.z);
         }
+
+        if (other.tag == "Kick")
+        {
+            canMove = false;
+            GetComponentInParent<Animator>().speed = 0;
+            Invoke("SnakeStun", snakeStun);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(kickX * FindObjectOfType<Girl>().lookDir, kickY);
+        }
+    }
+    void SnakeStun()
+    {
+        GetComponentInParent<Animator>().speed = 1;
+        GetComponent<Animator>().speed = 1;
+        canMove = true;
     }
 }

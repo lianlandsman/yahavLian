@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Bson;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,14 +12,22 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     public float speed = 10;
     public float JumpCat = 4;
     public bool onGround = true;
-    float lookDir = 1;
+    public float lookDir = 1;
     public bool stun = false;//from snake hit
-    Animator animator;
+    float hitCD = 4;
+    float lastHit = 0;
+    float hitTime = 15f/14f;
+    float currentSpeed;
+    public Animator animator;
+    Collider2D col;
     // Start is called before the first frame update
     void Start()
     {
-        
         controls.Cat_Controls.Enable();
+        currentSpeed = speed;
+        lastHit = -hitCD;
+        col = GetComponent<Collider2D>();
+        NormalCol();
     }
     private void OnDestroy()
     {
@@ -38,7 +47,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     {
         if (stun == false)
         {
-            transform.Translate(speed * Time.deltaTime * direction, 0, 0);
+            transform.Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
         }
         GetComponent<Transform>().localScale = new Vector3(lookDir,1,1);
         animator.SetBool("onGround", onGround);
@@ -69,6 +78,19 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
             onGround = false;
         }
     }
+    public void OnHit(InputAction.CallbackContext context)
+    {
+        if (lastHit + hitCD <= Time.timeSinceLevelLoad)
+        {
+            if (context.performed && onGround && animator.GetBool("sitting") == false)
+            {
+                animator.Play("catHit");
+                currentSpeed = 0;
+                Invoke("fixSpeed", hitTime);
+                lastHit = Time.timeSinceLevelLoad;
+            }
+        }
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.tag == "Ground")//land
@@ -78,8 +100,12 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
             animator.SetBool("scared", false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
-        if(other.collider.tag == "Head")
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<Collider2D>().tag == "Head")
         {
+            Invoke("SittingCol", 0.5f);
             animator.Play("headLand");
             animator.SetBool("sitting", true);
             onGround = true;
@@ -91,11 +117,30 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         {
             onGround = false;
         }
-        if (other.collider.tag == "Head")
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<Collider2D>().tag == "Head")
         {
+            Invoke("NormalCol", 0.45f);
             animator.SetBool("sitting", false);
-            onGround= false;
+            onGround = false;
         }
     }
+    public void NormalCol()
+    {
+            col.offset = new Vector2(0.0511961f, -0.2648661f);
+            col.GetComponent<BoxCollider2D>().size = new Vector2(1.369062f, 0.8122643f);
+    }
+    public void SittingCol()
+    {
+        col.offset = new Vector2(0.1427231f, 0.005359769f);
+        col.GetComponent<BoxCollider2D>().size = new Vector2(0.6106796f, 1.352716f); 
+    }
+    private void fixSpeed()
+    {
+        currentSpeed = speed;
+    }
+
 }
 
