@@ -16,8 +16,9 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     public bool stun = false;//from snake hit
     float hitCD = 4;
     float lastHit = 0;
-    float hitTime = 15f/14f;
+    float hitTime = 7f/8f;
     float currentSpeed;
+    public float upsideDown = 1; // 1 = normal -1 = upside down
     public Animator animator;
     Collider2D col;
     // Start is called before the first frame update
@@ -49,7 +50,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
         {
             transform.Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
         }
-        GetComponent<Transform>().localScale = new Vector3(lookDir,1,1);
+        GetComponent<Transform>().localScale = new Vector3(lookDir,upsideDown,1);
         animator.SetBool("onGround", onGround);
     }
 
@@ -71,7 +72,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && onGround)
+        if (context.performed && onGround && upsideDown == 1)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0,JumpCat);
             animator.Play("Jump");
@@ -98,6 +99,7 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
             onGround = true;
             stun = false;
             animator.SetBool("scared", false);
+            animator.SetBool("onGround", true);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }

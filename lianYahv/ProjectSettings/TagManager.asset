@@ -12,6 +12,7 @@ TagManager:
   - Snake
   - Kick
   - CatHit
+  - Face
   layers:
   - Default
   - TransparentFX

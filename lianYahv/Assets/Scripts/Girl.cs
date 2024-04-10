@@ -18,6 +18,8 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
     float kickTime = 21f/24f;
     float currentSpeed;
     float lastLookDir;
+    public bool scared = false;
+    public float x;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
         controls.Girl_Controls.Enable();
         lastKick = -kickCD;
         currentSpeed = speed;
+        scared = false;
     }
     private void OnDestroy()
     {
@@ -40,12 +43,19 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
+        
         GetComponent<Transform>().localScale = new Vector3(lookDir, 1, 1);
+        if (scared && direction == x)
+        {
+            direction = 0;
+            animator.speed = 0;
+        }
+        transform.Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
         if (FindObjectOfType<Cat>().onGround && FindObjectOfType<Cat>().animator.GetBool("sitting"))
         {
             FindObjectOfType<Cat>().GetComponent<Transform>().Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
         }
+        
     }
     void Controls.IGirl_ControlsActions.OnHorizontal(InputAction.CallbackContext context)//movement
     {
@@ -76,7 +86,7 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
     {
         if (lastKick + kickCD <= Time.timeSinceLevelLoad)
         {
-            if (context.performed)
+            if (context.performed && scared == false)
             {
                 animator.Play("girlKick");
                 currentSpeed = 0;
