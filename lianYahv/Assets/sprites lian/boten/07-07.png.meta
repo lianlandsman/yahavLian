@@ -127,7 +127,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 07-07_0
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 2499
+        width: 4802
+        height: 1682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b16e8ddcb0ad994797bde16f5b93718
+      internalID: 905026553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 07-07_1
+      rect:
+        serializedVersion: 2
+        x: 6132
+        y: 2519
+        width: 4883
+        height: 1601
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a845d03b24b2a124a8b9b5d68d2dd378
+      internalID: -660690278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 07-07_2
+      rect:
+        serializedVersion: 2
+        x: 11927
+        y: 2641
+        width: 4823
+        height: 1418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fef9657212df54aadb26d4c9921e2f
+      internalID: -1396683314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 07-07_3
+      rect:
+        serializedVersion: 2
+        x: 17722
+        y: 2559
+        width: 4884
+        height: 1561
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1edbbd149f47e409aee3dc3a9ac212
+      internalID: -905575396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 07-07_4
+      rect:
+        serializedVersion: 2
+        x: 17844
+        y: 371
+        width: 4741
+        height: 1459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c729b13b49aa645931cb3b952339ca
+      internalID: 1601760361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 07-07_5
+      rect:
+        serializedVersion: 2
+        x: 11907
+        y: 331
+        width: 4883
+        height: 1560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0703693c607a1b4e96b60d3768df4fb
+      internalID: 1256580514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 07-07_6
+      rect:
+        serializedVersion: 2
+        x: 6112
+        y: 229
+        width: 4883
+        height: 1601
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d254da31bc4a314089299e0f1cb9dff
+      internalID: -2072178305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 07-07_7
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 412
+        width: 4782
+        height: 1580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8fcfea086d59640b182936fcddec46
+      internalID: -94965407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +306,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      07-07_3: -905575396
+      07-07_2: -1396683314
+      07-07_6: -2072178305
+      07-07_1: -660690278
+      07-07_0: 905026553
+      07-07_4: 1601760361
+      07-07_7: -94965407
+      07-07_5: 1256580514
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
