@@ -19,10 +19,7 @@ public class ToggleGravityPlatform : MonoBehaviour
     {
         if (other.gameObject.tag == "Cat")
         {
-            if (FindObjectOfType<Cat>().upsideDown == -1)
-            {
-                Invoke("Land", 0.2f);
-            }
+            Invoke("Land", 0.2f);
             FindObjectOfType<Cat>().upsideDown = -FindObjectOfType<Cat>().upsideDown;
             //gravity = -gravity
             other.gameObject.GetComponent<Rigidbody2D>().gravityScale = -(other.gameObject.GetComponent<Rigidbody2D>().gravityScale);

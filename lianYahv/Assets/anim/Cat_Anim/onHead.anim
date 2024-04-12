@@ -20,12 +20,24 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 89e66de7213cb074282823f668b82d96, type: 3}
+      value: {fileID: 21300000, guid: b276002f4f0cc2d4cb45e36505582648, type: 3}
+    - time: 0.125
+      value: {fileID: 21300000, guid: 4c825b52d48aa974d9c98742fbdace1b, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 7dd3f58f96235f1478036e9b5ee7dcf4, type: 3}
+    - time: 0.375
+      value: {fileID: 21300000, guid: 2ccc39f2b34567c489bd2fd766dc59e1, type: 3}
+    - time: 1.375
+      value: {fileID: 21300000, guid: 7dd3f58f96235f1478036e9b5ee7dcf4, type: 3}
+    - time: 1.5
+      value: {fileID: 21300000, guid: 4c825b52d48aa974d9c98742fbdace1b, type: 3}
+    - time: 1.625
+      value: {fileID: 21300000, guid: b276002f4f0cc2d4cb45e36505582648, type: 3}
     attribute: m_Sprite
     path: basecat
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 1
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -40,13 +52,19 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 89e66de7213cb074282823f668b82d96, type: 3}
+    - {fileID: 21300000, guid: b276002f4f0cc2d4cb45e36505582648, type: 3}
+    - {fileID: 21300000, guid: 4c825b52d48aa974d9c98742fbdace1b, type: 3}
+    - {fileID: 21300000, guid: 7dd3f58f96235f1478036e9b5ee7dcf4, type: 3}
+    - {fileID: 21300000, guid: 2ccc39f2b34567c489bd2fd766dc59e1, type: 3}
+    - {fileID: 21300000, guid: 7dd3f58f96235f1478036e9b5ee7dcf4, type: 3}
+    - {fileID: 21300000, guid: 4c825b52d48aa974d9c98742fbdace1b, type: 3}
+    - {fileID: 21300000, guid: b276002f4f0cc2d4cb45e36505582648, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 2.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -65,4 +83,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 2.5
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
