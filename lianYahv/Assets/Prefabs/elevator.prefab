@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9184897070882257488}
   m_Layer: 0
   m_Name: elevator
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5591675432464860370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.19, y: -1.46, z: 0}
-  m_LocalScale: {x: 0.48889866, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 3c93bc2985db1d14d9ddac86da7efd4c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b052e9af0482774f8f9bf1445c429ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 274.62, y: 40.361633}
+  m_Size: {x: 4.6925564, y: 1.762}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,14 +102,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 5.8966656, y: -0.09154856}
-  - {x: 6.6981506, y: -0.656018}
-  - {x: 6.6854296, y: -0.8719294}
-  - {x: -4.765289, y: -0.88679457}
-  - {x: -5.7104516, y: -0.18836713}
-  - {x: -5.710452, y: 0}
-  - {x: 5.8258348, y: 0}
-  - {x: 6.475173, y: -0.48817098}
+  - {x: 1.645871, y: -0.00005349517}
+  - {x: 2.0972376, y: -0.33770818}
+  - {x: 2.097734, y: -0.551839}
+  - {x: -1.0868214, y: -0.55089015}
+  - {x: -1.8191649, y: 0}
+  - {x: 1.6462651, y: 0}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
