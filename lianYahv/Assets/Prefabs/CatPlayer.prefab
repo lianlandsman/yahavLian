@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 1501729122435438139}
   - component: {fileID: 1501729122435438118}
   - component: {fileID: 1501729122435438119}
+  - component: {fileID: 499323552381397481}
   m_Layer: 0
   m_Name: CatPlayer
   m_TagString: Cat
@@ -255,3 +256,92 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3690624, y: 0.8122643}
   m_EdgeRadius: 0
+--- !u!114 &499323552381397481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501729122435438137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 08a65137dc345c94c92bd5c114d1ce31, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d459fcfa-9a0f-4dce-9c28-44c575fb95c7
+    m_ActionName: Girl_Controls/Horizontal[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2b4af0a7-4908-42c6-968a-620f3092999b
+    m_ActionName: Girl_Controls/kick[/Keyboard/m]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1501729122435438117}
+        m_TargetAssemblyTypeName: Cat, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f5ca8bc9-ba7c-475e-b7da-0e43e7f138b7
+    m_ActionName: Cat_Controls/Move[/Keyboard/leftArrow,/Keyboard/rightArrow,/DragonRise
+      Inc.   Generic   USB  Joystick  /stick/right,/DragonRise Inc.   Generic   USB 
+      Joystick  /stick/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1501729122435438117}
+        m_TargetAssemblyTypeName: Cat, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1501729122435438117}
+        m_TargetAssemblyTypeName: Cat, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8b4c6c11-229e-497a-b745-2177bcff5a90
+    m_ActionName: Cat_Controls/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d8dc7756-50cb-4a6f-ab29-9d6c96253abe
+    m_ActionName: Cat_Controls/Hit[/Keyboard/n,/DragonRise Inc.   Generic   USB 
+      Joystick  /trigger]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Girl_Controls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

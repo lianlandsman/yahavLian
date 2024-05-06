@@ -5,9 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
+public class Cat : MonoBehaviour
 {
-    Controls controls;
     float direction = 0;
     public float speed = 10;
     public float JumpCat = 4;
@@ -24,21 +23,14 @@ public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
     // Start is called before the first frame update
     void Start()
     {
-        controls.Cat_Controls.Enable();
         currentSpeed = speed;
         lastHit = -hitCD;
         col = GetComponent<Collider2D>();
         NormalCol();
     }
-    private void OnDestroy()
-    {
-        controls.Cat_Controls.Disable();
-    }
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        controls = new Controls();
-        controls.Cat_Controls.SetCallbacks(this);
     }
 
 

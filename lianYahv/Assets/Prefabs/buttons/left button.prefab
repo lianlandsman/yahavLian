@@ -53,6 +53,11 @@ MonoBehaviour:
   moveSpeed: 3
   x: 1-up, 2-down, 3-right, 4-left
   direction: 4
+  girlOn: 0
+  catOn: 0
+  girl: {fileID: 0}
+  cat: {fileID: 0}
+  lim: 0
 --- !u!61 &4944437229538137929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 1601760361, guid: 948a024b2efcd9a44bedb7b1f76d1310, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -235,7 +240,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: -905575396, guid: 948a024b2efcd9a44bedb7b1f76d1310, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
