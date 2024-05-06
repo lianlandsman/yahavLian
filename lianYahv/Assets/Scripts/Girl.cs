@@ -57,7 +57,7 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
         }
         
     }
-    void Controls.IGirl_ControlsActions.OnHorizontal(InputAction.CallbackContext context)//movement
+    public void OnHorizontal(InputAction.CallbackContext context)//movement
     {
         if (context.performed)
         {
@@ -82,7 +82,7 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
             animator.SetBool("isWalking", false);
         }
     }
-    void Controls.IGirl_ControlsActions.OnKick(InputAction.CallbackContext context)
+    public void OnKick(InputAction.CallbackContext context)
     {
         if (lastKick + kickCD <= Time.timeSinceLevelLoad)
         {
