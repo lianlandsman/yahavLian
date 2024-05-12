@@ -20,9 +20,11 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
     float lastLookDir;
     public bool scared = false;
     public float x;
+    public bool onElevator = false;
     // Start is called before the first frame update
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         animator = GetComponent<Animator>();
         controls = new Controls();
         controls.Girl_Controls.SetCallbacks(this);
@@ -55,7 +57,6 @@ public class Girl : MonoBehaviour, Controls.IGirl_ControlsActions
         {
             FindObjectOfType<Cat>().GetComponent<Transform>().Translate(currentSpeed * Time.deltaTime * direction, 0, 0);
         }
-        
     }
     public void OnHorizontal(InputAction.CallbackContext context)//movement
     {

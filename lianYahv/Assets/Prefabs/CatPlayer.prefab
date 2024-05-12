@@ -321,6 +321,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_ActionId: 8b4c6c11-229e-497a-b745-2177bcff5a90
+    m_ActionName: Cat_Controls/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1501729122435438117}
         m_TargetAssemblyTypeName: Cat, Assembly-CSharp
         m_MethodName: OnHit
@@ -333,10 +337,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 8b4c6c11-229e-497a-b745-2177bcff5a90
-    m_ActionName: Cat_Controls/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: d8dc7756-50cb-4a6f-ab29-9d6c96253abe
     m_ActionName: Cat_Controls/Hit[/Keyboard/n,/DragonRise Inc.   Generic   USB 
       Joystick  /trigger]

@@ -2,11 +2,13 @@ using Newtonsoft.Json.Bson;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Cat : MonoBehaviour
+public class Cat : MonoBehaviour, Controls.ICat_ControlsActions
 {
+    Controls controls;
     float direction = 0;
     public float speed = 10;
     public float JumpCat = 4;
@@ -20,9 +22,12 @@ public class Cat : MonoBehaviour
     public float upsideDown = 1; // 1 = normal -1 = upside down
     public Animator animator;
     Collider2D col;
+    public bool onElevator = false;
+    
     // Start is called before the first frame update
     void Start()
     {
+        controls.Cat_Controls.Enable();
         currentSpeed = speed;
         lastHit = -hitCD;
         col = GetComponent<Collider2D>();
@@ -30,7 +35,10 @@ public class Cat : MonoBehaviour
     }
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         animator = GetComponent<Animator>();
+        controls = new Controls();
+        controls.Cat_Controls.SetCallbacks(this);
     }
 
 

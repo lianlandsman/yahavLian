@@ -28,6 +28,8 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        girlOn = girl.GetComponent<Girl>().onElevator;
+        catOn = cat.GetComponent<Cat>().onElevator;
         if (moving)
         {
             if (direction == 1 && platform.transform.position.y <= lim)//up

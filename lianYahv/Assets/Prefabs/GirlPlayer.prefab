@@ -195,6 +195,7 @@ MonoBehaviour:
   speed: 10
   scared: 0
   x: 0
+  onElevator: 0
 --- !u!95 &1250408557265214076
 Animator:
   serializedVersion: 4
@@ -318,8 +319,8 @@ PolygonCollider2D:
       - {x: -0.29216385, y: -0.98746955}
       - {x: -0.3429985, y: -1.1759291}
       - {x: -0.35449737, y: -1.4619467}
-      - {x: 0.19637299, y: -1.4665334}
-      - {x: 0.20667803, y: -1.348904}
+      - {x: 0.089888096, y: -1.4766786}
+      - {x: 0.09512293, y: -1.38947}
       - {x: 0.08909607, y: -1.3178924}
       - {x: 0.1638794, y: -0.57484984}
       - {x: 0.2088356, y: -0.3462739}
@@ -383,7 +384,7 @@ MonoBehaviour:
     m_ActionName: Girl_Controls/kick[/Keyboard/m]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1250408557265214079}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1

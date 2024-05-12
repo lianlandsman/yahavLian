@@ -13,6 +13,7 @@ TagManager:
   - Kick
   - CatHit
   - Face
+  - LL
   layers:
   - Default
   - TransparentFX
