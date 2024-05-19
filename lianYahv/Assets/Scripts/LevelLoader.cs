@@ -21,7 +21,7 @@ public class LevelLoader : MonoBehaviour
         GirlSP[5] = new Vector2(0, 0);
         GirlSP[6] = new Vector2(0, 0);
 
-        CatSP[1] = new Vector2(-7.56f, -8.324122f);
+        CatSP[1] = new Vector2(5.970025f, -8.324122f);
         CatSP[2] = new Vector2(0, 0);
         CatSP[3] = new Vector2(0, 0);
         CatSP[4] = new Vector2(0, 0);
