@@ -9,11 +9,6 @@ public class playersManager : MonoBehaviour
 {
     private PlayerInputManager playerInput;
     [SerializeField] GameObject Girl;
-    [SerializeField] GameObject Cat;
-    bool cat = false;
-    bool girl = false;
-    bool done = false;
-    int i = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,13 +23,13 @@ public class playersManager : MonoBehaviour
         //{
         //    Debug.Log(InputSystem.devices[i].name);
         //    Debug.Log(i);
-        //    if (InputSystem.devices[i].name == "DualSense Wireless Controller" || InputSystem.devices[i].name == "DualSenseGamepadHID" && cat == false)//Girl
+        //    if (InputSystem.devices[i].name == "DualSense Wireless Controller"  && cat == false)//Girl
         //    {
         //        playerInput.playerPrefab = Girl;
         //        playerInput.JoinPlayer(i, -1, null, InputSystem.devices[i]);
         //        cat = true;
         //    }
-        //    if (InputSystem.devices[i].name == "Nintendo Wireless Gamepad" || InputSystem.devices[i].name == "Nintendo Wireless Gamepad2" && girl == false)//Cat
+        //    if (InputSystem.devices[i].name == "Nintendo Wireless Gamepad" && girl == false)//Cat
         //    {
         //        playerInput.playerPrefab = Cat;
         //        playerInput.JoinPlayer(i, -1, null, InputSystem.devices[i]);

@@ -272,7 +272,7 @@ MonoBehaviour:
   m_NotificationBehavior: 3
   m_MaxPlayerCount: 2
   m_AllowJoining: 1
-  m_JoinBehavior: 2
+  m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -314,7 +314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Girl: {fileID: 1250408557265214074, guid: 5707f51f6578f2548abd100516058076, type: 3}
-  Cat: {fileID: 1501729122435438137, guid: 3da753ead29307c47bc631ce0726235d, type: 3}
 --- !u!1001 &879809840
 PrefabInstance:
   m_ObjectHideFlags: 0
