@@ -15,14 +15,14 @@ public class LevelLoader : MonoBehaviour
     void Start()
     {
         GirlSP[1] = new Vector2(-9.44f, -7.518391f);
-        GirlSP[2] = new Vector2(0, 0);
+        GirlSP[2] = new Vector2(-75.58f, -11.22209f);
         GirlSP[3] = new Vector2(0, 0);
         GirlSP[4] = new Vector2(0, 0);
         GirlSP[5] = new Vector2(0, 0);
         GirlSP[6] = new Vector2(0, 0);
 
         CatSP[1] = new Vector2(5.970025f, -8.324122f);
-        CatSP[2] = new Vector2(0, 0);
+        CatSP[2] = new Vector2(-80.21f, -12.02755f);
         CatSP[3] = new Vector2(0, 0);
         CatSP[4] = new Vector2(0, 0);
         CatSP[5] = new Vector2(0, 0);
